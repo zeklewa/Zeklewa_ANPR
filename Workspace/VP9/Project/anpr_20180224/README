@@ -1,0 +1,75 @@
+Installation
+============
+
+Install Cmake: 
+	sudo apt-get install software-properties-common
+	sudo add-apt-repository ppa:george-edison55/cmake-3.x
+	sudo apt-get update
+	sudo apt-get install cmake
+
+Install OpenCV:
+	sudo apt install libopencv-dev
+Install curl: 
+	sudo apt-get install  libcurl4-openssl-dev
+Install json: 
+	sudo apt-get install libjson0 libjson0-dev
+Install libwebsockets: 
+	sudo apt-get install libwebsockets-dev
+Copy lib:
+	COPY include/tracking.hpp TO usr/include/opencv2/
+	COPY Amvideocap.h;Amvideocaptools.h TO usr/include
+
+Install caffe2 (https://caffe2.ai/docs/getting-started.html?platform=ubuntu&configuration=compile):
+	sudo apt-get update
+
+	sudo apt-get install -y --no-install-recommends \
+      build-essential \
+      cmake \
+      git \
+      libgoogle-glog-dev \
+      libprotobuf-dev \
+      protobuf-compiler \
+      python-dev \
+      python-pip                          
+
+	sudo pip install numpy protobuf
+	git clone --recursive https://github.com/caffe2/caffe2.git && cd caffe2
+	make && cd build && sudo make install
+	
+
+Build source in a build folder inside the main folder
+  mkdir build
+  cd build
+  cmake ..
+  make
+Run
+  PlateRecognizationFramework/PlateRecognizationFramework
+
+
+Step 2:
+    Thay đổi cấu hình log trong */etc/rsyslog.d/50-default.conf
+
+    *.*;auth,authpriv.none -/var/log/syslog
+    kern.* -/var/log/kern.log
+
+thành
+
+    .emerg;*.alert;*.crit;*.err;auth,authpriv.none -/var/log/syslog
+    kern.emerg;kern.alert;kern.crit;kern.err -/var/log/kern.log
+
+    Khởi động lại rsyslod
+
+    sudo service rsyslog restart
+
+Step 3:
+AutoRun x96:
+sudo vi /etc/rc.local
+bin/bash
+python /root/ANPR/autorun.py &
+
+
+từ máy anh: scp -P 36197 -r engine-v1-anpr_X96_2017_09_18  sysadmin@115.84.178.69:/home/sysadmin/
+
+git config --global user.name "Thành NN"
+git config --global user.email "thanhnn@vp9.vn"
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libPlateExtractor.a  CMakeFiles/PlateExtractor.dir/src/caffe_model.cpp.o CMakeFiles/PlateExtractor.dir/src/keras_model.cpp.o CMakeFiles/PlateExtractor.dir/src/TextReader.cpp.o
+/usr/bin/ranlib libPlateExtractor.a

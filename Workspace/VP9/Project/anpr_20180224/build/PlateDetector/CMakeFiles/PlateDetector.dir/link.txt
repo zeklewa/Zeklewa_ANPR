@@ -1,0 +1,2 @@
+/usr/bin/ar qc libPlateDetector.a  CMakeFiles/PlateDetector.dir/src/CascadeTrainingStrategy.cpp.o CMakeFiles/PlateDetector.dir/src/IPlateDetect.cpp.o CMakeFiles/PlateDetector.dir/src/IPlateDetectStrategy.cpp.o CMakeFiles/PlateDetector.dir/src/PlateDetector.cpp.o
+/usr/bin/ranlib libPlateDetector.a
